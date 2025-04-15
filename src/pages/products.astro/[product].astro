@@ -1,3 +1,83 @@
 ---
+import Layout from "../../layouts/Layout.astro";
+import ProductColor from "../../components/ProductColor.astro";
 
+export async function getStaticPaths() {
+  const url = "https://qadtvsifzezktrfulues.supabase.co/rest/v1/products";
+  const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFhZHR2c2lmemV6a3RyZnVsdWVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQzNTUzNjMsImV4cCI6MjA1OTkzMTM2M30.rreiw6kbv2yzGoBOH3O0fAlXMWEDKjkVokL_SFiLG-M";
+
+  const options = {
+    headers: {
+      apikey: key,
+    },
+  };
+
+  const request = await fetch(url, options);
+  const data = await request.json();
+
+  return data.map((item) => {
+    return {
+      params: { product: item.slug },
+      props: { item },
+    };
+  });
+}
+
+const { item } = Astro.props;
 ---
+
+<Layout title=`${item.product}`>
+  <header>
+    <h1>{item.name}</h1>
+    <p>{item.price} kr</p>
+    <div class="images">
+      {
+        item.more_images.map((image) => {
+          return <img src=`${image}` alt="Product image"/>
+        })
+      }
+    </div>
+
+    <h2>Description</h2>
+    <p>{item.description}</p>
+  </header>
+  <h2>Colors</h2>
+  <div class="colors">
+    {
+      item.colors.map((color) => {
+        return <ProductColor color={color} />;
+      })
+    }
+  </div>
+</Layout>
+
+<style>
+  header {
+    padding: 2rem;
+  }
+  h1,
+  h2 {
+    font-size: 1rem;
+  }
+  h2 {
+    text-transform: uppercase;
+  }
+  p {
+    max-width: 75ch;
+  }
+  img {
+    max-width: 100%;
+  }
+  .images {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .colors {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+</style>

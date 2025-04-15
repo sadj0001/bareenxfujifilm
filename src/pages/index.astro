@@ -7,11 +7,53 @@ import ProductCard from "../components/ProductCard.astro";
 import ProductSite from "./product_site.astro";
 
 import Layout from "../layouts/Layout.astro";
+
+const url = "https://qadtvsifzezktrfulues.supabase.co/rest/v1/products";
+const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFhZHR2c2lmemV6a3RyZnVsdWVzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQzNTUzNjMsImV4cCI6MjA1OTkzMTM2M30.rreiw6kbv2yzGoBOH3O0fAlXMWEDKjkVokL_SFiLG-M";
+
+const options = {
+  headers: {
+    apikey: key,
+  },
+};
+
+const request = await fetch(url, options);
+const data = await request.json();
+
+console.log("data", data);
 ---
 
-<Layout>
+<Layout title="home">
   <Hero />
-  <ProductCard />
+
+  <section>
+    <h2 class="center">Fujifilm x Bareen</h2>
+    <p class="center">Limited Collection</p>
+    <div class="products">
+      {
+        data.map((product) => {
+          return <ProductCard data={product} />;
+        })
+      }
+    </div>
+  </section>
 
   <Footer />
 </Layout>
+
+<style>
+  section {
+    padding: 5rem;
+  }
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 2rem;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+</style>
