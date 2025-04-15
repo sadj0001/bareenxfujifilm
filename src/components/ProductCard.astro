@@ -1,3 +1,27 @@
 ---
-
+const { data } = Astro.props;
+import ProductColor from "./ProductColor.astro";
 ---
+
+<article>
+  <img src={data.image} alt=`Image of ${data.products}` />
+  <h3>{`${data.name} - ${data.collection}`}</h3>
+  <p>{data.price} kr</p>
+  <p><a href=`/products/${data.slug}`>Læs mere</a></p>
+</article>
+
+<style>
+  article {
+    width: 300px;
+    padding-bottom: 1rem;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(195, 195, 195);
+    padding-inline: 0.5rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+</style>
