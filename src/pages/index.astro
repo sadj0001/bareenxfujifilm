@@ -5,7 +5,7 @@ import Hero from "../components/Hero.astro";
 import Product from "./products.astro/[product].astro";
 import ProductCard from "../components/ProductCard.astro";
 import ProductSite from "./product_site.astro";
-
+import Menu from "../components/Menu.astro";
 import Layout from "../layouts/Layout.astro";
 
 const url = "https://qadtvsifzezktrfulues.supabase.co/rest/v1/products";
@@ -23,6 +23,7 @@ const data = await request.json();
 console.log("data", data);
 ---
 
+<Menu />
 <Layout title="home">
   <Hero />
 
