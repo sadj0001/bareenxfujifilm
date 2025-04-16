@@ -3,8 +3,9 @@
 ---
 
 <div class="graaboks">
-  <p>Fri fragt over 499 kr - 4,6 paa Trustpilot</p>
+  <p>Fri fragt over 499 kr - 4,6 på Trustpilot</p>
 </div>
+
 <nav>
   <ul class="nav-links-left">
     <li><a href="#">HERRE</a></li>
@@ -15,21 +16,38 @@
   </ul>
 
   <a href="index.astro" class="logo-link">
-    <img src="sort_logo.webp" width="125" alt="Logo" />
+    <img class="logo" src="sort_logo.webp" width="125" alt="Logo" />
   </a>
 
   <ul class="nav-links-right">
     <li><a href="#">CLUB</a></li>
     <li><a href="#">LOG IND</a></li>
     <li><a href="#"><img src="circle-flag-of-denmark-free-png.webp" width="20" alt="Logo" /></a></li>
-    <li><a href="#"><img src="search.webp" width="20" alt="Logo" /></a></li>
+    <li class="always-visible"><a href="#"><img src="search.webp" width="20" alt="Søg" /></a></li>
     <li><a href="#"><img src="heart-stroke-icon-512x480-i5hgmi48.webp" width="17" alt="Logo" /></a></li>
-    <li><a href="#"><img src="shopping_bag_icon_153998.webp" width="30" alt="Logo" /></a></li>
+    <li class="always-visible"><a href="#"><img src="shopping_bag_icon_153998.webp" width="30" alt="Kurv" /></a></li>
+  </ul>
+
+  <div class="burger">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+
+  <ul class="menu">
+    <li><a href="#">HERRE</a></li>
+    <li><a href="#">DAME</a></li>
+    <li><a href="#">SPORT</a></li>
+    <li><a href="#">COMMUNITY</a></li>
+    <li class="underline"><a href="#">COLLABS</a></li>
+    <li><a href="#">CLUB</a></li>
+    <li class="underline"><a href="#">LOG IND</a></li>
   </ul>
 </nav>
 
 <style>
   .graaboks {
+    width: 100%;
     background-color: #4c4c4c;
     color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
@@ -75,4 +93,132 @@
     color: #000000;
     font-family: "Roboto", sans-serif;
   }
+
+  /* Burger Menu Styles */
+  .burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    width: 25px;
+    height: 20px;
+    z-index: 3;
+  }
+
+  .burger .line {
+    width: 100%;
+    height: 2px;
+    background-color: #000000; /* Sort */
+    transition: 0.2s ease-in-out;
+  }
+
+  /* Mobile menu */
+  .menu {
+    display: none;
+    list-style-type: none;
+    position: absolute;
+    top: 94px;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+
+  .menu li {
+    padding: 10px 20px;
+    text-align: left;
+  }
+
+  /* --------------------- */
+  /* MOBILE: under 800px */
+  /* --------------------- */
+  @media screen and (max-width: 800px) {
+    .nav-links-left {
+      display: none;
+    }
+
+    .nav-links-right li {
+      display: none;
+    }
+
+    .logo-link img {
+      width: 100px;
+      height: auto;
+    }
+
+    .logo-link {
+      position: absolute;
+      left: 50%;
+      top: 17%;
+      transform: translateX(-50%);
+    }
+
+    .nav-links-right li.always-visible {
+      display: inline-block;
+    }
+
+    .burger.active .line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+      transition: 0.2s linear;
+    }
+
+    .burger.active .line:nth-child(2) {
+      opacity: 0;
+      transition: 0.15s linear;
+    }
+
+    .burger.active .line:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+      transition: 0.2s linear;
+    }
+
+    .nav-links-right {
+      position: absolute;
+      right: 20px;
+      top: 25px;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .burger {
+      display: flex;
+      position: absolute;
+      left: 20px;
+      top: 30px;
+    }
+
+    .burger.active + .menu {
+      display: block;
+    }
+
+    .underline {
+      border-bottom: solid 1px #c8c8c8;
+    }
+
+    nav {
+      padding-inline: 30px;
+      padding-top: 25px;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 0.8rem;
+      height: 80px;
+    }
+  }
 </style>
+
+<script>
+  const burger = document.querySelector(".burger");
+  const menu = document.querySelector(".menu");
+
+  burger.addEventListener("click", () => {
+    burger.classList.toggle("active");
+    menu.classList.toggle("active");
+  });
+</script>
