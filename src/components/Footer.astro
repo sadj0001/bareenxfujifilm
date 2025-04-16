@@ -1,3 +1,87 @@
 ---
-
+import Button from "./Button.astro";
 ---
+
+<footer>
+  <div>
+    <div>
+      <div class="signup">
+        <p class="text1">GÅ ALDRIG GLIP AF NOGET</p>
+        <p class="text2">BLIV MEDLEM AF NYHEDSBREVET</p>
+      </div>
+      <form class="newsletter_form">
+        <input type="email" id="email" name="email" placeholder="Email" required />
+
+        <button type="submit">SKRIV MIG OP</button>
+
+        <div class="checkbox_container">
+          <input type="checkbox" id="consent" required />
+          <label for="consent">
+            Ja, jeg ønsker at modtage henvendelser fra bareen vedrørende tilbud, nyheder og produkter indenfor deres produktsortiment via email. Dit samtykke kan til enhver tid tilbagekaldes ved at skrive til os på: <a href="mailto:info@bareen.dk">info@bareen.dk</a>
+          </label>
+        </div>
+      </form>
+    </div>
+    <div></div>
+    <div></div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    padding: 20px;
+  }
+
+  .text1 {
+    width: 100%;
+    text-align: center;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .text2 {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .newsletter_form input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    background-color: black;
+    color: grey;
+    border: none;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    border: none;
+  }
+
+  /* Simpel container styling */
+  .checkbox_container {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  /* Minimal custom checkbox */
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: black; /* Gør checkboksen sort med hvidt hak */
+    cursor: pointer;
+  }
+</style>
