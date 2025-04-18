@@ -3,7 +3,7 @@ import Button from "./Button.astro";
 ---
 
 <footer>
-  <div>
+  <div class="grid_1_4">
     <div>
       <div class="signup">
         <p class="text1">GÅ ALDRIG GLIP AF NOGET</p>
@@ -22,8 +22,22 @@ import Button from "./Button.astro";
         </div>
       </form>
     </div>
-    <div></div>
-    <div></div>
+    <div>
+      <p>SHOP</p>
+    </div>
+
+    <div>
+      <p>INFORMATION</p>
+    </div>
+
+    <div>
+      <p>KUNDESERVICE <br /><br /></p>
+      <p>
+        Man - Fre: 9:00 - 16:00 <br />
+        Weekend & helligdage: Lukket<br /><br />
+      </p>
+      <p>Live chat: Tilgås via ikon nederst til højre på siden</p>
+    </div>
   </div>
 </footer>
 
@@ -83,5 +97,12 @@ import Button from "./Button.astro";
     height: 18px;
     accent-color: black; /* Gør checkboksen sort med hvidt hak */
     cursor: pointer;
+  }
+
+  @media screen and (min-width: 800px) {
+    .grid_1_4 {
+      display: grid;
+      grid-template-columns: 4;
+    }
   }
 </style>
