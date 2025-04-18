@@ -31,6 +31,8 @@ console.log("data", data);
     <h1>Et samarbejde der hylder det,</h1>
     <h1>der ellers ville gå ubemærket hen.</h1>
   </section>
+  <p class="konceptet">En kollektion, hvor street, active og high fashion møder æstetik, nærvær og kultur. Skabt til øje-blikke, der ikke skal performes, men mærkes. I en verden der konstant skruer op, vælger vi at skru ned. For ro er ikke svaghed, det er styrke. Og det kræver selvsikkerhed at prioritere sig selv over alt det, der larmer. Med Bareens bløde silhuetter og Fujifilms evne til at forevige, hylder vi hverdagens glemte øjeblikke – dem du næsten ikke lagde mærke til, men alligevel aldrig glemmer. Dette er tøj til byen, studiet, dansen, og pausen efter. Til bevægelse og til stilstand. Til dig, når du er ærligst. Capture the moment – Not for the feed. But for yourself.</p>
+  <img class="kamera" src="kameramedtekst.png" alt="kamera" />
 
   <Button href="#kollektion" text="Se kollektion" />
 
@@ -48,6 +50,25 @@ console.log("data", data);
           return <ProductCard data={product} />;
         })
       }
+    </div>
+  </section>
+
+  <section id="exclusiveevent">
+    <img class="exclusiveeventbillede" src="exclusiveevent.webp" alt="exclusiveeventbillede" />
+    <div class="exclusiveevent_tekst">
+      <h1>CAPTURE THE MOMENT</h1>
+      <h2>Exclusive event</h2>
+    </div>
+    <div class="backgroundcolor">
+      <img src="projektoer.webp" alt="projektoer" />
+      <img src="dj.webp" alt="dj" />
+      <img src="location.webp" alt="location" />
+      <img src="udstilling.webp" alt="udstilling" />
+      <div class="BareenTv">
+        <h3>Episode 9: Hverdagens glemte øjeblikke</h3>
+        <p>24.05.2025</p>
+        <Button href="#BAREENTV" text="BAREEN TV" />
+      </div>
     </div>
   </section>
 
@@ -69,8 +90,25 @@ console.log("data", data);
   #capture {
     width: 300px;
   }
+
   section {
-    padding: 5rem;
+    padding: 3rem;
+  }
+
+  .konceptet {
+    max-width: 300px;
+    padding-left: 5rem;
+  }
+
+  .kamera {
+    max-width: none;
+    width: 400px;
+  }
+
+  @media (min-width: 1000px) {
+    .kamera {
+      width: 600px;
+    }
   }
   .products {
     display: flex;
@@ -85,6 +123,25 @@ console.log("data", data);
   }
 
   .text {
+    color: white;
+  }
+
+  .exclusiveeventbillede {
+    position: relative;
+  }
+
+  .exclusiveevent_tekst {
+    position: absolute;
+    color: white;
+    top: 420%;
+    left: 10%;
+  }
+
+  .backgroundcolor {
+    background-color: black;
+  }
+
+  .BareenTv {
     color: white;
   }
 </style>
