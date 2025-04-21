@@ -59,20 +59,24 @@ console.log("data", data);
   </section>
 
   <section id="exclusiveevent">
-    <img class="exclusiveeventbillede" src="exclusiveevent.webp" alt="exclusiveeventbillede" />
     <div class="exclusiveevent_tekst">
       <h1>CAPTURE THE MOMENT</h1>
       <h2>Exclusive event</h2>
     </div>
+    <img class="exclusiveeventbillede" src="event_billede.png" alt="exclusiveeventbillede" />
     <div class="backgroundcolor">
-      <img src="projektoer.webp" alt="projektoer" />
-      <img src="dj.webp" alt="dj" />
-      <img src="location.webp" alt="location" />
-      <img src="udstilling.webp" alt="udstilling" />
-      <div class="BareenTv">
-        <h3>Episode 9: Hverdagens glemte øjeblikke</h3>
-        <p>24.05.2025</p>
-        <Button href="#BAREENTV" text="BAREEN TV" />
+      <div class="billed_collage">
+        <img class="img img1" src="projektoer.webp" alt="projektoer" />
+        <img class="img img2" src="dj.webp" alt="dj" />
+        <img class="img img3" src="location.webp" alt="location" />
+      </div>
+      <div class="grid_collage">
+        <div class="BareenTv">
+          <h3>Episode 9: Hverdagens glemte øjeblikke</h3>
+          <p>24.05.2025</p>
+          <Button href="#BAREENTV" text="BAREEN TV" />
+        </div>
+        <img src="udstilling.webp" alt="udstilling" />
       </div>
     </div>
   </section>
@@ -161,6 +165,19 @@ console.log("data", data);
       margin-left: 60%;
       padding-bottom: 2rem;
     }
+    .exclusiveevent_tekst {
+      color: white;
+      position: absolute;
+      padding-top: 3rem;
+      padding-left: 3rem;
+    }
+    .img {
+      width: 600px;
+    }
+    .grid_collage {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
   }
   .products {
     display: flex;
@@ -178,15 +195,42 @@ console.log("data", data);
     color: white;
   }
 
+  .billed_collage {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  /* Billede 1 – venstre */
+  .img1 {
+    grid-column: 1/4;
+    padding-bottom: 5rem;
+    padding-left: 1rem;
+    padding-top: 1rem;
+  }
+
+  /* Billede 2 – center */
+  .img2 {
+    grid-column: 4/6;
+    grid-row: 2/5;
+    padding-bottom: 1rem;
+  }
+
+  /* Billede 3 – højre */
+  .img3 {
+    grid-column: 1/3;
+    grid-row: 4/6;
+    padding-bottom: 3rem;
+  }
+
   .exclusiveeventbillede {
-    position: relative;
+    width: 100%;
   }
 
   .exclusiveevent_tekst {
-    position: absolute;
     color: white;
-    top: 420%;
-    left: 10%;
+    position: absolute;
+    padding-top: 1rem;
+    padding-left: 1rem;
   }
 
   .backgroundcolor {
@@ -195,5 +239,11 @@ console.log("data", data);
 
   .BareenTv {
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 3rem;
   }
 </style>
