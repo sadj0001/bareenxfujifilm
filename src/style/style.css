@@ -42,16 +42,7 @@ p {
   --font-size-p-mobile: 12px;
   --font-size-p-desktop: 20px;
   --line-height-p-mobile: 20px;
-}
-
-@media (min-width: 800px) {
-  :root {
-    --font-size-h1: 64px;
-    --font-size-h2: 62px;
-    --font-size-h3: 26px;
-    --font-size-p: 20px;
-    --line-height-p: 24px;
-  }
+  --line-height-p-desktop: 24px;
 }
 
 .lottie {

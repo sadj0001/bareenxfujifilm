@@ -3,7 +3,7 @@ import Button from "./Button.astro";
 ---
 
 <footer>
-  <div class="grid_1_4">
+  <div class="grid">
     <div>
       <div class="signup">
         <p class="text1">GÅ ALDRIG GLIP AF NOGET</p>
@@ -12,26 +12,41 @@ import Button from "./Button.astro";
       <form class="newsletter_form">
         <input type="email" id="email" name="email" placeholder="Email" required />
 
-        <button type="submit">SKRIV MIG OP</button>
+        <button type="submit" style="font-weight: 600;">SKRIV MIG OP </button>
 
         <div class="checkbox_container">
           <input type="checkbox" id="consent" required />
           <label for="consent">
-            Ja, jeg ønsker at modtage henvendelser fra bareen vedrørende tilbud, nyheder og produkter indenfor deres produktsortiment via email. Dit samtykke kan til enhver tid tilbagekaldes ved at skrive til os på: <a href="mailto:info@bareen.dk">info@bareen.dk</a>
+            Ja, jeg ønsker at modtage henvendelser fra bareen vedrørende tilbud, nyheder og produkter indenfor deres produktsortiment via email. Dit samtykke kan til enhver tid tilbagekaldes ved at skrive til os på: <a href="mailto:info@bareen.dk"> <br />info@bareen.dk</a>
           </label>
         </div>
       </form>
     </div>
     <div>
-      <p>SHOP</p>
+      <p class="titel_footer">SHOP</p>
+      <div class="none">
+        <p>Herre</p>
+        <p>Dame</p>
+        <p>Collab</p>
+        <p>accessories</p>
+        <p>Gavekort</p>
+        <p>Butik</p>
+      </div>
     </div>
-
     <div>
-      <p>INFORMATION</p>
+      <p class="titel_footer">INFORMATION</p>
+      <div class="none">
+        <p>Vores historie</p>
+        <p>Blog</p>
+        <p>Kontakt</p>
+        <p>Ombyt/Retur</p>
+        <p>Handelsbetingelser</p>
+        <p>Privatpolitik</p>
+        <p>Cookiepolitik</p>
+      </div>
     </div>
-
     <div>
-      <p>KUNDESERVICE <br /><br /></p>
+      <p class="titel_footer">KUNDESERVICE <br /><br /></p>
       <p>
         Man - Fre: 9:00 - 16:00 <br />
         Weekend & helligdage: Lukket<br /><br />
@@ -43,7 +58,22 @@ import Button from "./Button.astro";
 
 <style>
   footer {
-    padding: 20px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-bottom: 3rem;
+  }
+
+  .signup {
+    margin-top: 6rem;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  label {
+    padding-bottom: 3rem;
   }
 
   .text1 {
@@ -68,7 +98,7 @@ import Button from "./Button.astro";
     margin-bottom: 1rem;
     border-radius: 10px;
     background-color: black;
-    color: grey;
+    color: rgb(255, 255, 255);
     border: none;
   }
 
@@ -99,10 +129,28 @@ import Button from "./Button.astro";
     cursor: pointer;
   }
 
-  @media screen and (min-width: 800px) {
-    .grid_1_4 {
+  .titel_footer {
+    font-weight: 600;
+    padding-bottom: 1rem;
+  }
+
+  .none {
+    display: none;
+  }
+
+  @media (min-width: 800px) {
+    .grid {
       display: grid;
-      grid-template-columns: 4;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      width: 100%;
+      margin-top: 6rem;
+      align-self: center;
+    }
+    .none {
+      display: block;
+    }
+    .signup {
+      margin: 0;
     }
   }
 </style>
