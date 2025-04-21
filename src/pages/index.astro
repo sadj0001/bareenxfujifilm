@@ -28,13 +28,14 @@ console.log("data", data);
   <Hero />
 
   <section id="intro">
-    <h1>Et samarbejde der hylder det,</h1>
-    <h1>der ellers ville gå ubemærket hen.</h1>
+    <h1>Et samarbejde der hylder det, <br /> der ellers ville gå ubemærket hen.</h1>
   </section>
-  <p class="konceptet">En kollektion, hvor street, active og high fashion møder æstetik, nærvær og kultur. Skabt til øje-blikke, der ikke skal performes, men mærkes. I en verden der konstant skruer op, vælger vi at skru ned. For ro er ikke svaghed, det er styrke. Og det kræver selvsikkerhed at prioritere sig selv over alt det, der larmer. Med Bareens bløde silhuetter og Fujifilms evne til at forevige, hylder vi hverdagens glemte øjeblikke – dem du næsten ikke lagde mærke til, men alligevel aldrig glemmer. Dette er tøj til byen, studiet, dansen, og pausen efter. Til bevægelse og til stilstand. Til dig, når du er ærligst. Capture the moment –Not for the feed. But for yourself.</p>
+  <p class="konceptet">En kollektion, hvor street, active og high fashion møder æstetik, nærvær og kultur. Skabt til øje- <br />blikke, der ikke skal performes, men mærkes. <span class="fed_tekst"> I en verden der konstant skruer op, vælger vi at skru ned.</span> For ro er ikke svaghed, det er styrke. Og det kræver selvsikkerhed at prioritere sig selv over alt det, der larmer. Med Bareens bløde silhuetter og Fujifilms evne til at forevige, hylder vi <span class="fed_tekst"> hverdagens glemte øjeblikke </span> – dem du næsten ikke lagde mærke til, men alligevel aldrig glemmer. Dette er tøj til byen, studiet, dansen, og pausen efter. Til bevægelse og til stilstand. Til dig, når du er ærligst. <br /> <span class="fed_tekst"> Capture the moment</span> –Not for the feed. But for yourself.</p>
   <img class="kamera" src="kameramedtekst.png" alt="kamera" />
 
-  <Button href="#kollektion" text="Se kollektion" />
+  <div class="kollektion_knap">
+    <Button href="#kollektion" text="Se kollektion" />
+  </div>
 
   <div class="lottie">
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
@@ -42,13 +43,12 @@ console.log("data", data);
   </div>
 
   <section id="capture">
-    <h1 style="font-weight: 200;">#capturethemoment</h1>
-    <p>En stille hyldest til de øjeblikke, du normalt ville scrolle forbi. Med Bareen x Fujifilm hylder vi de øjeblikke, der mærkes mere end de ses. Del dit instagramopslag med #CaptureTheMoment, tag @bareen og vis os, hvordan du bærer kollektionen – i ro, i bevægelse, i nuet. Vær med i konkurrencen om den ugentlige præmie og en plads på vores collab-side på bareen.dk. Det handler ikke om at være klar, men om at være til stede. Et minde, skabt af dig. Delt med os.</p>
+    <h2>#capturethemoment</h2>
+    <p class="capture_tekst">En stille hyldest til de øjeblikke, du normalt ville scrolle forbi. Med Bareen x Fujifilm hylder vi de øjeblikke, der mærkes mere end de ses. Del dit instagramopslag med #CaptureTheMoment, tag @bareen og vis os, hvordan du bærer kollektionen – i ro, i bevægelse, i nuet. Vær med i konkurrencen om den ugentlige præmie og en plads på vores collab-side på bareen.dk. Det handler ikke om at være klar, men om at være til stede. Et minde, skabt af dig. Delt med os.</p>
   </section>
 
   <section id="kollektion">
-    <h2 class="center">Fujifilm x Bareen</h2>
-    <p class="center">Limited Collection</p>
+    <h1 class="center">Fujifilm x Bareen</h1>
     <div class="products">
       {
         data.map((product) => {
@@ -92,6 +92,22 @@ console.log("data", data);
     width: 301px;
   } */
 
+  h1 {
+    font-size: clamp(var(--font-size-h1-mobile), 4vw, var(--font-size-h1-desktop));
+    font-weight: 500;
+  }
+
+  h2 {
+    font-size: clamp(var(--font-size-h2-mobile), 4vw, var(--font-size-h2-desktop));
+    font-weight: 200;
+  }
+
+  #intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   #capture {
     width: 300px;
   }
@@ -100,19 +116,50 @@ console.log("data", data);
     padding: 3rem;
   }
 
+  .fed_tekst {
+    font-weight: 600;
+  }
+
   .konceptet {
-    max-width: 300px;
-    padding-left: 5rem;
+    font-size: clamp(var(--font-size-p-mobile), 3vw, var(--font-size-p-desktop));
+    max-width: 290px;
+    padding-left: 6rem;
+    margin-left: 5%;
   }
 
   .kamera {
     max-width: none;
-    width: 400px;
+    width: 430px;
+    margin-left: 5%;
   }
 
-  @media (min-width: 1000px) {
+  .kollektion_knap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .capture_tekst {
+    font-weight: 300;
+    font-size: clamp(var(--font-size-p-mobile), 3vw, var(--font-size-p-desktop));
+  }
+
+  .products {
+    margin-bottom: 1rem;
+  }
+  @media (min-width: 800px) {
     .kamera {
-      width: 600px;
+      width: 750px;
+      margin-left: 8%;
+    }
+    .konceptet {
+      max-width: 390px;
+      padding-left: 5rem;
+      margin-left: 20%;
+    }
+    .kollektion_knap {
+      margin-left: 60%;
+      padding-bottom: 2rem;
     }
   }
   .products {

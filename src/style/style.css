@@ -22,6 +22,7 @@ img {
 p {
   padding-bottom: 0.25rem;
   width: 400px;
+  font-size: var(--font-size-p);
 }
 
 :root {
@@ -32,11 +33,25 @@ p {
 }
 
 :root {
-  --font-size-h1: 64px;
-  --font-size-h2: 62px;
-  --font-size-h3: 26px;
-  --font-size-p: 12px;
-  --line-height-p: 24px;
+  --font-size-h1-mobile: 22px;
+  --font-size-h1-desktop: 64px;
+  --font-size-h2-mobile: 20px;
+  --font-size-h2-desktop: 62px;
+  --font-size-h3-mobile: 16px;
+  --font-size-h3-desktop: 26px;
+  --font-size-p-mobile: 12px;
+  --font-size-p-desktop: 20px;
+  --line-height-p-mobile: 20px;
+}
+
+@media (min-width: 800px) {
+  :root {
+    --font-size-h1: 64px;
+    --font-size-h2: 62px;
+    --font-size-h3: 26px;
+    --font-size-p: 20px;
+    --line-height-p: 24px;
+  }
 }
 
 .lottie {
