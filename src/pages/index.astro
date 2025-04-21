@@ -79,45 +79,54 @@ console.log("data", data);
         <img src="udstilling.webp" alt="udstilling" />
       </div>
     </div>
+    <div class="ugens">
+      <h1 class="ugens_titel">UGENS</h1>
+      <h2 class="ugens_titel2">#capturethemoment</h2>
+      <div class="ugens">
+        <img src="ugen_billede.svg" alt="ugens billede" />
+        <p>@brugernavn</p>
+      </div>
+    </div>
+    <p>
+      Ugens øjeblik <br />
+      Fanget i et stille sekund – ægte, nærværende og helt sit eget. Ugens vinder viser os, hvordan Bareen bæres med ro og styrke på samme tid. Tak for at minde os om, at det smukke ofte findes i det uperfekte. <br />
+      #capturethemoment
+    </p>
   </section>
 
   <Footer />
 </Layout>
 
 <style>
-  /* .foto_tekst {
-    color: #000;
-    font-family: "Helvetica Neue";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-
-    width: 301px;
-  } */
-
   h1 {
     font-size: clamp(var(--font-size-h1-mobile), 4vw, var(--font-size-h1-desktop));
     font-weight: 500;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
   h2 {
     font-size: clamp(var(--font-size-h2-mobile), 4vw, var(--font-size-h2-desktop));
     font-weight: 200;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  p {
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
   #intro {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
   #capture {
     width: 300px;
-  }
-
-  section {
-    padding: 3rem;
   }
 
   .fed_tekst {
@@ -193,6 +202,8 @@ console.log("data", data);
 
   .text {
     color: white;
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 
   .billed_collage {
@@ -245,5 +256,27 @@ console.log("data", data);
     justify-content: center;
     text-align: center;
     padding-bottom: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .ugens_titel {
+    font-size: 80px;
+    padding-top: 5rem;
+  }
+
+  .ugens_titel2 {
+    padding-left: 8rem;
+    padding-bottom: 2rem;
+    margin-top: -1rem;
+  }
+
+  .ugens {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 2rem;
   }
 </style>
