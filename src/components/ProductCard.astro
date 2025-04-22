@@ -6,11 +6,15 @@ import ProductColor from "./ProductColor.astro";
 <article>
   <img class="hjerte" src="hjerte.png" alt="hjerte" />
   <img src={data.image} alt=`Image of ${data.products}` />
-  <div class="card_tekst">
-    <p>{`${data.name} - ${data.collection}`}</p>
-    <p>{data.price} kr</p>
-    <p><a href=`/products/${data.slug}`>Læs mere</a></p>
-  </div>
+  <h3>{`${data.name} - ${data.collection}`}</h3>
+  <p>{data.price} kr</p>
+  <p><a href=`/products/${data.slug}`>Læs mere</a></p>
+  {
+    data.color &&
+      data.color.map((color) => {
+        return <ProductColor color={color} />;
+      })
+  }
 </article>
 
 <style>

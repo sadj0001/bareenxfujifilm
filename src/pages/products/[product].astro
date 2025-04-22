@@ -30,6 +30,7 @@ const { item } = Astro.props;
   <header>
     <h1>{item.name}</h1>
     <p>{item.price} kr</p>
+    <!-- 
     <div class="images">
       {
         item.more_images.map((image) => {
@@ -37,16 +38,18 @@ const { item } = Astro.props;
         })
       }
     </div>
+    -->
 
     <h2>Description</h2>
     <p>{item.description}</p>
   </header>
-  <h2>Colors</h2>
+  {item.color && <h2>Colors</h2>}
   <div class="colors">
     {
-      item.colors.map((color) => {
-        return <ProductColor color={color} />;
-      })
+      item.color &&
+        item.color.map((color) => {
+          return <ProductColor color={color} />;
+        })
     }
   </div>
 </Layout>
