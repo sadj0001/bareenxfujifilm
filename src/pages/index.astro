@@ -49,7 +49,7 @@ console.log("data", data);
 
   <section id="kollektion">
     <h1 class="center">Fujifilm x Bareen</h1>
-    <div class="products">
+    <div class="produkter">
       {
         data.map((product) => {
           return <ProductCard data={product} />;
@@ -152,8 +152,10 @@ console.log("data", data);
     font-size: clamp(var(--font-size-p-mobile), 3vw, var(--font-size-p-desktop));
   }
 
-  .products {
-    margin-bottom: 1rem;
+  .produkter {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, auto);
   }
   @media (min-width: 800px) {
     .kamera {
@@ -176,6 +178,12 @@ console.log("data", data);
     .img {
       width: 600px;
     }
+    .produkter {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr); /* Fire kolonner */
+      grid-template-rows: repeat(5, auto);
+    }
+
     .grid_collage {
       display: grid;
       grid-template-columns: 1fr 1fr;
