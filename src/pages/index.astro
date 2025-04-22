@@ -142,6 +142,10 @@ console.log("data", data);
     margin-left: 5%;
   }
 
+  #kollektion {
+    width: 100%;
+  }
+
   .kollektion_knap {
     display: flex;
     justify-content: center;
@@ -154,9 +158,9 @@ console.log("data", data);
   }
 
   .produkter {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, auto);
   }
   @media (min-width: 800px) {
     .kamera {
@@ -180,9 +184,7 @@ console.log("data", data);
       width: 600px;
     }
     .produkter {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr); /* Fire kolonner */
-      grid-template-rows: repeat(5, auto);
+      grid-template-columns: repeat(4, 1fr);
     }
 
     .grid_collage {
