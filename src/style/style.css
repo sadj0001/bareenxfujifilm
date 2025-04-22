@@ -33,9 +33,9 @@ p {
 }
 
 :root {
-  --font-size-h1-mobile: 22px;
+  --font-size-h1-mobile: 30px;
   --font-size-h1-desktop: 64px;
-  --font-size-h2-mobile: 20px;
+  --font-size-h2-mobile: 26px;
   --font-size-h2-desktop: 62px;
   --font-size-h3-mobile: 16px;
   --font-size-h3-desktop: 26px;
