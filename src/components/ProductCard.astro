@@ -8,6 +8,12 @@ import ProductColor from "./ProductColor.astro";
   <h3>{`${data.name} - ${data.collection}`}</h3>
   <p>{data.price} kr</p>
   <p><a href=`/products/${data.slug}`>Læs mere</a></p>
+  {
+    data.color &&
+      data.color.map((color) => {
+        return <ProductColor color={color} />;
+      })
+  }
 </article>
 
 <style>
