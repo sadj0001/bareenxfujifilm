@@ -87,16 +87,14 @@ console.log("data", data);
       <h1 class="ugens_titel">UGENS</h1>
       <h2 class="ugens_titel2">#capturethemoment</h2>
       <div class="ugens">
-
-        <img class="ugens_billede" src="images/ugen_billede.svg" alt="ugens billede" />
+        <img class="ugens_billede" src="images/ugen_billede.png" alt="ugens billede" />
 
         <p class="brugernavn">@brugernavn</p>
       </div>
     </div>
-    <p class="ugens_tekstfelt">
-      Ugens øjeblik <br />
-      Fanget i et stille sekund – ægte, nærværende og helt sit eget. Ugens vinder viser os, hvordan Bareen bæres med ro og styrke på samme tid. Tak for at minde os om, at det smukke ofte findes i det uperfekte. #capturethemoment
-    </p>
+
+    <h3 class="ugens_overskrift">Ugens øjeblik</h3>
+    <p class="ugens_tekstfelt">Fanget i et stille sekund – ægte, nærværende og helt sit eget. Ugens vinder viser os, hvordan Bareen bæres med ro og styrke på samme tid. Tak for at minde os om, at det smukke ofte findes i det uperfekte. #capturethemoment</p>
   </section>
 
   <Footer />
@@ -120,6 +118,8 @@ console.log("data", data);
     align-items: center;
     padding-left: 3rem;
     padding-right: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
   }
 
   #capture {
@@ -169,6 +169,10 @@ console.log("data", data);
     padding-bottom: 5rem;
   }
   @media (min-width: 800px) {
+    #intro {
+      margin-top: 4rem;
+      margin-bottom: 2rem;
+    }
     .kamera {
       width: 750px;
       margin-left: 14%;
@@ -213,6 +217,10 @@ console.log("data", data);
       width: 500px;
       font-size: var(--font-size-p-desktop);
     }
+    .brugernavn {
+      text-align: left;
+      margin-left: -70%;
+    }
   }
   .products {
     display: flex;
@@ -235,6 +243,7 @@ console.log("data", data);
   .billed_collage {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin-top: -4px;
   }
 
   /* Billede 1 – venstre */
@@ -313,14 +322,20 @@ console.log("data", data);
     padding-bottom: 1rem;
   }
   .ugens_billede {
-    width: 100%;
+    width: 80%;
     padding-left: 4rem;
     padding-right: 4rem;
   }
   .brugernavn {
     text-align: left;
+    margin-left: -40%;
+  }
+  .ugens_overskrift {
+    margin-left: 1rem;
+    margin-top: 2rem;
   }
   .ugens_tekstfelt {
     margin-left: 1rem;
+    margin-bottom: 3rem;
   }
 </style>
