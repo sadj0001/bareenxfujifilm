@@ -23,7 +23,7 @@ import Button from "./Button.astro";
       </form>
     </div>
     <div>
-      <p class="titel_footer">SHOP</p>
+      <p class="titel_footer1">SHOP</p>
       <div class="none">
         <p>Herre</p>
         <p>Dame</p>
@@ -34,7 +34,7 @@ import Button from "./Button.astro";
       </div>
     </div>
     <div>
-      <p class="titel_footer">INFORMATION</p>
+      <p class="titel_footer2">INFORMATION</p>
       <div class="none">
         <p>Vores historie</p>
         <p>Blog</p>
@@ -46,7 +46,7 @@ import Button from "./Button.astro";
       </div>
     </div>
     <div>
-      <p class="titel_footer">KUNDESERVICE <br /><br /></p>
+      <p class="titel_footer3">KUNDESERVICE <br /><br /></p>
       <p>
         Man - Fre: 9:00 - 16:00 <br />
         Weekend & helligdage: Lukket<br /><br />
@@ -129,7 +129,22 @@ import Button from "./Button.astro";
     cursor: pointer;
   }
 
-  .titel_footer {
+  .titel_footer1 {
+    font-weight: 600;
+    padding-bottom: 1rem;
+    border-block: solid lightgray;
+    margin-bottom: 15px;
+    padding-top: 15px;
+  }
+
+  .titel_footer2 {
+    font-weight: 600;
+    padding-bottom: 1rem;
+    border-bottom: solid lightgray;
+    margin-bottom: 15px;
+  }
+
+  .titel_footer3 {
     font-weight: 600;
     padding-bottom: 1rem;
   }
@@ -152,6 +167,21 @@ import Button from "./Button.astro";
     }
     .signup {
       margin: 0;
+    }
+
+    .titel_footer1 {
+      font-weight: 600;
+      padding-bottom: 1rem;
+      border-block: none;
+      margin-bottom: 15px;
+      padding-top: 15px;
+    }
+
+    .titel_footer2 {
+      font-weight: 600;
+      padding-bottom: 1rem;
+      border-bottom: none;
+      margin-bottom: 15px;
     }
   }
 </style>
