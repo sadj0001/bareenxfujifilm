@@ -29,8 +29,7 @@ const { item } = Astro.props;
 <Layout title=`${item.product}`>
   <header>
     <h1>{item.name}</h1>
-    <p>{item.price} kr</p>
-    <!-- 
+    <p class="prize">{item.price} kr</p>
     <div class="images">
       {
         item.more_images.map((image) => {
@@ -38,12 +37,21 @@ const { item } = Astro.props;
         })
       }
     </div>
-    -->
+
 
     <h2>Description</h2>
     <p>{item.description}</p>
-  </header>
-  {item.color && <h2>Colors</h2>}
+
+    <ul>
+      {
+      item.tags &&
+      item.tags.map((tag) => <li>{tag}</li>)}
+    </ul>
+
+    <p>{item.material}</p>
+
+      {item.color && <h2>Colors</h2>}
+
   <div class="colors">
     {
       item.color &&
@@ -52,13 +60,32 @@ const { item } = Astro.props;
         })
     }
   </div>
+
+
+<h2>Choose size</h2>
+ <div class="sizes">
+ {
+  item.size &&
+    Object.entries(item.size).map(([size, value]) => {
+      if (value === "true") {
+        return <button class="size-btn">{size.toUpperCase()}</button>;
+      }
+    })
+}
+ </div>
+
+  </header>
+  
+
 </Layout>
 
 <style>
   header {
     padding: 2rem;
   }
-  h1,
+  h1{
+    font-size: 4rem;
+  }
   h2 {
     font-size: 1rem;
   }
@@ -67,9 +94,19 @@ const { item } = Astro.props;
   }
   p {
     max-width: 75ch;
+  
   }
   img {
     max-width: 100%;
+  }
+
+  ul{
+    padding-top: 1.5rem;
+     padding-bottom: 1.5rem;
+  }
+
+  .prize{
+    font-size: 2rem;
   }
   .images {
     display: grid;
@@ -83,4 +120,25 @@ const { item } = Astro.props;
     gap: 0.5rem;
     margin-bottom: 1rem;
   }
+
+  .size-btn {
+  padding: 0.5rem 1rem;
+  border: 2px solid #000;
+  background: #fff;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  gap: 10px;
+}
+
+.size-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+.sizes{
+  display: flex;
+  gap: 10px;
+}
 </style>

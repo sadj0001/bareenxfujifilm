@@ -1,3 +1,48 @@
 ---
 
 ---
+
+<section id="splash">
+  <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+    <source src="video/motion-hero_1.mp4" type="video/mp4" />
+  </video>
+  <!-- <hgroup id="video-text">
+    <h1>THIS IS A RIVER.</h1>
+    <h2>How majestic.</h2>
+  </hgroup> -->
+</section>
+
+<style>
+  #splash {
+    display: grid;
+    place-items: center;
+  } /* video background */
+
+  #background-video {
+    grid-area: 1 /1;
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+  } /* video overlay */
+
+  #video-text {
+    grid-area: 1 / 1;
+    opacity: 0.8;
+  }
+  h1,
+  h2 {
+    color: #fff;
+    font-family: Trebuchet MS;
+    text-align: center;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 6rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+</style>
